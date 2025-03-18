@@ -1,0 +1,85 @@
+"basic ideavim setup 
+
+"leader key is space
+let mapleader = " "
+
+
+"basic siettings
+set number relativenumber
+set ignorecase smartcase
+set hlsearch
+set history=1000
+set surround
+set incsearch
+set smartcase
+set scrolloff = 10
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+
+
+" Third party plugins
+set surround
+set highlightedyank
+set sneak
+set nerdtree
+set easymotion
+set which-key
+set notimeout
+
+"Disable arrow keys
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+
+"easymotion plugin mappings
+map <leader>J <Plug>(easymotion-s)
+map <leader>j <Plug>(easymotion-f)
+
+"Fuzzier - fuzzy finder settings
+map <Leader>ff <action>(com.mituuz.fuzzier.Fuzzier)
+map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
+map <Leader>gf <action>(com.mituuz.fuzzier.FuzzierVCS)
+
+"key mappings
+" nerdtree key mappings
+nnoremap <leader>ee :NERDTreeToggle<CR>
+nnoremap <leader>ef :NERDTreeFocus<CR>
+let NERDTreeQuitOnOpen=1
+
+" search and splits
+nnoremap <leader>Q :on<CR>
+nnoremap <leader>vs :vsp<cr>
+nnoremap <leader>hs :sp<cr>
+nnoremap <leader>/ :nohlsearch<CR>
+
+" basic key mappings escape insert mode, save and format file, undo and redo
+inoremap jj <Esc>
+nnoremap <CR> :action ReformatCode<CR> :write<CR>
+nnoremap U <C-r>
+
+" Configuration
+noremap <leader>c :e ~/.ideavimrc<CR>
+nnoremap <leader>r source: ~/.ideavimrc<CR>
+
+" Editor
+nnoremap <C-f> :action GotoFile <cr>
+nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
+" Terminal
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
+
+" Editor tabs
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>\
+
+"Quick split navigation
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+
+
